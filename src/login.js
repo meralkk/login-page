@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./login.css";
-import { Container, Form } from "react-bootstrap";
+import "./app.css";
+import { Button, Container, Form } from "react-bootstrap";
 import axios from "axios";
+import banner from "../src/img/banner.png";
+import logo from "../src/img/favicon.svg";
 
 const Login = () => {
   const [form, setform] = useState({
@@ -11,34 +13,50 @@ const Login = () => {
   });
 
   const handleSubmit = async (e) => {
-    e.preventDefault ();
+    e.preventDefault();
     console.log(form);
-    const dto = {...form};
+    const dto = { ...form };
     await axios.post();
-  }
+  };
 
   return (
-    <Container>
-      <h2>Login</h2>
-      <Form>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="username@gmail.com"
-            value={form.email}
-          />
-          <Form.Label htmlFor="inputPassword5">Password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Password"
-            value={form.password}
-            id="inputPassword5"
-            aria-describedby="passwordHelpBlock"
-          />
-        </Form.Group>
-      </Form>
-    </Container>
+    <div className="login-page">
+      <div className="log col-sm-6 col-lg-4">
+        <Container>
+          <div>
+            <img className="logo" src={logo} alt="logo" />
+          </div>
+          <h2>Login</h2>
+          <br />
+          <Form>
+            <Form.Group className="form-group mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="username@gmail.com"
+                value={form.email}
+              />
+              <br />
+              <Form.Label htmlFor="inputPassword5">Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                value={form.password}
+                id="inputPassword5"
+                aria-describedby="passwordHelpBlock"
+              />
+            </Form.Group>
+            <p>Forgot Password?</p>
+          </Form>
+          <br />
+          <Button className="col-12">Sign in</Button>{" "}
+        </Container>
+      </div>
+
+      <div>
+        <img className="banner" src={banner} alt="banner" />
+      </div>
+    </div>
   );
 };
 
