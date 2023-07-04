@@ -26,7 +26,10 @@ body {
 
 .login-page .container {
   background-color: rgba(255, 255, 255, 0.3);
-  padding: 10%;
+  padding-left: 18%;
+  padding-right: 18%;
+  padding-top: 18%;
+  padding-bottom:15% ;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 30px;
   margin-left: 20%;
@@ -34,6 +37,11 @@ body {
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
+}
+
+.forgot:hover {
+  color: var(--color-secondary);
+  cursor: pointer;
 }
 
 .banner {
@@ -45,8 +53,13 @@ body {
   margin-bottom: 20px;
 }
 
-button {
+.sign-in {
   background-color: var(--color-secondary) !important;
+  border: none;
+}
+
+.sign-in:hover {
+  background-color: var(--color-main) !important;
 }
 
 .form-group {
@@ -57,10 +70,59 @@ p {
   font-size: 14px;
 }
 
-.form-control::placeholder {
-  color: var(--color-placeholder);
-  font-size: 16px;
+.form-control {
+  border: none;
 }
 
+.form-control::placeholder {
+  color: var(--color-placeholder);
+  font-size: 14px;
+}
 
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-media img {
+  width :28%;
+}
+
+.social-media .google,
+.social-media .github,
+.social-media .facebook {
+  background-color: white !important;
+  border: none;
+  height: 42px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.social-media .google:hover,
+.social-media .github:hover,
+.social-media .facebook:hover {
+  background-color: var(--color-placeholder) !important;
+
+}
+
+.text {
+  text-align:center!important ;
+  padding-top: 26px;
+}
+
+.bgimage {
+  position:absolute;
+  left: -35%;
+  width: 80%;
+  opacity: 0.1;
+  z-index: -1;
+  transform: scaleX(-1);
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+}
 
